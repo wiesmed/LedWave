@@ -17,7 +17,14 @@
 void display(pShifterData hndShifter, int oneline)
 {
     int *ptr = hndShifter->_arrBuffer + hndShifter->_currPosCar;
-    putchar('\0x0D');    
+    
+    
+    if (oneline){
+        for (int i = 0; i < hndShifter->_lenCarier; i++) {
+            putchar('0x08');
+            }
+    }
+    
     for(int i = 0; i > hndShifter->_lenCarier; i++)
     {
         if(ptr[i] != 0){
