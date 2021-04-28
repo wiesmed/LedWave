@@ -17,20 +17,22 @@
 void display(pShifterData hndShifter, int oneline)
 {
     puint ptr = hndShifter->_arrBuffer + hndShifter->_currPosCar;
+
+    // if (oneline){
+    //     for (int i = 0; i < hndShifter->_lenCarier; i++) {
+    //         putchar(0xD);
+    //         }
+    // }
     
-    
-    if (oneline){
-        for (int i = 0; i < hndShifter->_lenCarier; i++) {
-            putchar(0x0D);
-            }
-    }
-    
+    putchar(0xD);
+
     for(int i = 0; i < hndShifter->_lenCarier; i++)
     {
         if(ptr[i] != 0){
-            putchar('#');
+            putchar('O');
         } else {
             putchar(' ');
         }
     }
+    fflush(stdout);
 }
