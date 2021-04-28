@@ -21,7 +21,7 @@ void display(pShifterData hndShifter, int oneline)
     
     if (oneline){
         for (int i = 0; i < hndShifter->_lenCarier; i++) {
-            putchar('0x08');
+            putchar(0x08);
             }
     }
     

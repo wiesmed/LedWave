@@ -7,9 +7,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/home/pi/Projects/C/LedWave/LedWave/shifter.h</file>
             <file>file:/home/pi/Projects/C/LedWave/LedWave/display.c</file>
             <file>file:/home/pi/Projects/C/LedWave/LedWave/main.c</file>
+=======
+            <file>file:/home/wieslaw/Projects/C/LedWave/shifter.c</file>
+            <file>file:/home/wieslaw/Projects/C/LedWave/display.c</file>
+            <file>file:/home/wieslaw/Projects/C/LedWave/main.c</file>
+            <file>file:/home/wieslaw/Projects/C/LedWave/display.h</file>
+            <file>file:/home/wieslaw/Projects/C/LedWave/shifter.h</file>
+>>>>>>> 50c7b6160a0e168ac41c93f17f462e0c7a934e9d
         </group>
     </open-files>
 </project-private>

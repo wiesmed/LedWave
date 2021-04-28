@@ -21,7 +21,7 @@
  */
 int main(int argc, char** argv) {
     uint cd[4] = {1, 1, 1, 1};
-    pShifterData sd = initShifer(4, cd, CYCLE, 1);
+    pShifterData sd = initShifer(cd, 4, CYCLE, 1);
 
     for (size_t i = 0; i < 100; i++) {
         display(sd, 1);

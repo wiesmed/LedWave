@@ -33,7 +33,7 @@ pShifterData initShifer(puint CarierData, size_t CarierLen, mode mode, int dir)
     psd = (pShifterData) malloc(sizeof (tShifterData));
 
     if (psd == NULL) {
-        fprintf(stderr, "Error no %d \n", SHIFTER_ERR_NOMEMORY);
+        fprintf(stderr, "Error no %d due alocaton for structure\n", SHIFTER_ERR_NOMEMORY);
         return NULL;
     }
 
@@ -45,7 +45,7 @@ pShifterData initShifer(puint CarierData, size_t CarierLen, mode mode, int dir)
     psd->_arrBuffer = calloc(psd->_lenBuffer, sizeof (uint));
 
     if (psd->_arrBuffer == NULL) {
-        fprintf(stderr, "Error no %d \n", SHIFTER_ERR_NOMEMORY);
+        fprintf(stderr, "Error no %d due allocation for buffer\n", SHIFTER_ERR_NOMEMORY);
         free(psd);
         return NULL;
     }
@@ -53,7 +53,7 @@ pShifterData initShifer(puint CarierData, size_t CarierLen, mode mode, int dir)
     psd->_arrCarier = calloc(CarierLen, sizeof (uint));
 
     if (psd->_arrCarier == NULL) {
-        fprintf(stderr, "Error no %d \n", SHIFTER_ERR_NOMEMORY);
+        fprintf(stderr, "Error no %d due allocation for carier data\n", SHIFTER_ERR_NOMEMORY);
         free(psd->_arrBuffer);
         free(psd);
         return NULL;
