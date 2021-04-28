@@ -59,8 +59,11 @@ pShifterData initShifer(puint CarierData, size_t CarierLen, mode mode, int dir)
         return NULL;
     }
 
+    puint pCarInBufStart = psd->_arrBuffer + psd->_lenCarier;
+
     for (size_t i = 0; i < CarierLen; i++) {
         psd->_arrCarier[i] = CarierData[i];
+        pCarInBufStart[i] = CarierData[i];
     }
 
     if (psd->_direction > 0) {
@@ -72,7 +75,9 @@ pShifterData initShifer(puint CarierData, size_t CarierLen, mode mode, int dir)
         psd->_beginPosCar = psd->_lenCarier * 2;
         psd->_endPosCar = 0;
     }
-    
+        
+    psd->_currPosCar = psd->_beginPosCar;
+
     return psd;
 }
 

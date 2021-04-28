@@ -16,16 +16,16 @@
 
 void display(pShifterData hndShifter, int oneline)
 {
-    int *ptr = hndShifter->_arrBuffer + hndShifter->_currPosCar;
+    puint ptr = hndShifter->_arrBuffer + hndShifter->_currPosCar;
     
     
     if (oneline){
         for (int i = 0; i < hndShifter->_lenCarier; i++) {
-            putchar(0x08);
+            putchar(0x0D);
             }
     }
     
-    for(int i = 0; i > hndShifter->_lenCarier; i++)
+    for(int i = 0; i < hndShifter->_lenCarier; i++)
     {
         if(ptr[i] != 0){
             putchar('#');
