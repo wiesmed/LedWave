@@ -1,9 +1,3 @@
-/*
- * 
- * 
- * 
- */
-
 /* 
  * File:   main.c
  * Author: wieslaw
@@ -28,7 +22,8 @@ int main(int argc, char** argv) {
         runShifter(sd);
     }
 
-
+    freeShifter(sd);
+    
     return (EXIT_SUCCESS);
 }
 
