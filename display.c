@@ -13,26 +13,60 @@
 
 #include "display.h"
 #include "shifter.h"
+#include <stdio.h>
+#include <wiringPi.h>
 
-void display(pShifterData hndShifter, int oneline)
+void display(pShifterData hndShifter, pLedSet leds)
 {
     puint ptr = hndShifter->_arrBuffer + hndShifter->_currPosCar;
 
-    // if (oneline){
-    //     for (int i = 0; i < hndShifter->_lenCarier; i++) {
-    //         putchar(0xD);
-    //         }
-    // }
-    
+    printf("\033[33;40m");
     putchar(0xD);
 
-    for(int i = 0; i < hndShifter->_lenCarier; i++)
+    for (int i = 0; i < hndShifter->_lenCarier; i++)
     {
-        if(ptr[i] != 0){
+        if (ptr[i] != 0)
+        {
             putchar('O');
-        } else {
+
+            if(leds != NULL && leds->wPiStarted){
+                pinMode(pins[i], OUTPUT);
+                digitalWrite(pins[i], 1);
+            }
+        }
+        else
+        {
             putchar(' ');
+            if(leds != NULL && leds->wPiStarted){
+                pinMode(pins[i], OUTPUT);
+                digitalWrite(pins[i], 0);
+            }
         }
     }
     fflush(stdout);
+}
+
+int startWiringPi(pLedSet leds)
+{
+    if (wiringPiSetupGpio())
+    {
+        return 0;
+    }
+
+    for (size_t i = 0; i < 9; i++)
+    {
+        pinMode(pins[i], OUTPUT);
+    }
+
+    leds->wPiStarted = 1;
+    return 0;
+}
+
+void closeWiringPi(pLedSet leds)
+{
+    for (size_t i = 0; i < 9; i++)
+    {
+        pinMode(pins[i], INPUT);
+        digitalWrite(pins[i], 0);
+    }
 }
